@@ -1,0 +1,7 @@
+android { 
+    productFlavors {
+        "nativescript-justified-label" {
+            dimension "nativescript-justified-label"
+        }
+    }
+}

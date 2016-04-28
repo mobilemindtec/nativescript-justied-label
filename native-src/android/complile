@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gradle exportJar
+
+cp app/release/justifiedlabel.jar ../../platforms/android/libs
