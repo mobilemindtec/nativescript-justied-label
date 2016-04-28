@@ -3,6 +3,7 @@ var enums = require("ui/enums");
 var utils = require("utils/utils");
 var view = require("ui/core/view");
 var style = require("ui/styling/style");
+var types = require("utils/types");
 global.moduleMerge(common, exports);
 var background;
 function ensureBackground() {
@@ -43,33 +44,53 @@ var UILabelImpl = (function (_super) {
     };
     return UILabelImpl;
 }(UILabel));
-var Label = (function (_super) {
-    __extends(Label, _super);
-    function Label(options) {
+var JustifiedLabel = (function (_super) {
+    __extends(JustifiedLabel, _super);
+    function JustifiedLabel(options) {
         _super.call(this, options);
         this._ios = UILabelImpl.initWithOwner(new WeakRef(this));
         this._ios.userInteractionEnabled = true;
     }
-    Object.defineProperty(Label.prototype, "ios", {
+    Object.defineProperty(JustifiedLabel.prototype, "ios", {
         get: function () {
             return this._ios;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Label.prototype, "_nativeView", {
+    Object.defineProperty(JustifiedLabel.prototype, "_nativeView", {
         get: function () {
             return this._ios;
         },
         enumerable: true,
         configurable: true
     });
-    Label.prototype.onLoaded = function () {
+    JustifiedLabel.prototype.onLoaded = function () {
         _super.prototype.onLoaded.call(this);
         this.style._updateTextDecoration();
         this.style._updateTextTransform();
     };
-    Label.prototype.onMeasure = function (widthMeasureSpec, heightMeasureSpec) {
+
+    JustifiedLabel.prototype._onTextPropertyChanged = function (data) {
+        var newValue = types.isNullOrUndefined(data.newValue) ? "" : data.newValue + "";
+        this.ios.text = newValue;
+
+        var paragraphStyles = NSMutableParagraphStyle.alloc().init();
+        paragraphStyles.alignment = NSTextAlignmentJustified;      //justified text
+        paragraphStyles.firstLineHeadIndent = 10.0;                //must have a value to make it work  
+        var attributes = {NSParagraphStyleAttributeName: paragraphStyles};
+        var attributedString = NSAttributedString.alloc().initWithStringAttributes(this.ios.text, attributes);
+        this.ios.attributedText = attributedString;                    
+
+
+        this.style._updateTextDecoration();
+        this.style._updateTextTransform();
+
+        console.log("## _onTextPropertyChanged")
+    };
+
+
+    JustifiedLabel.prototype.onMeasure = function (widthMeasureSpec, heightMeasureSpec) {
         var nativeView = this._nativeView;
         if (nativeView) {
             var width = utils.layout.getMeasureSpecSize(widthMeasureSpec);
@@ -93,10 +114,10 @@ var Label = (function (_super) {
             var heightAndState = view.View.resolveSizeAndState(measureHeight, height, heightMode, 0);
             this.setMeasuredDimension(widthAndState, heightAndState);
         }
-    };
-    return Label;
-}(common.Label));
-exports.Label = Label;
+    };    
+    return JustifiedLabel;
+}(common.JustifiedLabel));
+exports.JustifiedLabel = JustifiedLabel;
 var LabelStyler = (function () {
     function LabelStyler() {
     }
