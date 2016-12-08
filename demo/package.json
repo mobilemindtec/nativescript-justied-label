@@ -1,15 +1,15 @@
 {
-  "nativescript": {
-    "id": "org.nativescript.demo",
-    "tns-ios": {
-      "version": "1.7.0"
-    },
-    "tns-android": {
-      "version": "1.7.1"
-    }
-  },
+	"nativescript": {
+		"id": "org.nativescript.demo",
+		"tns-ios": {
+			"version": "1.7.0"
+		},
+		"tns-android": {
+			"version": "1.7.1"
+		}
+	},
 	"dependencies": {
-    "nativescript-justified-label": "file:../../nativescript-justified-label",
+		"nativescript-justified-label": "file:../../nativescript-justified-label",
 		"tns-core-modules": "2.0.0"
 	}
 }
