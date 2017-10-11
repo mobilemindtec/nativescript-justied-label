@@ -9,11 +9,13 @@ var JustifiedLabel = (function (_super) {
         this.nativeView = new com.telerik.justifiedlabel.JustifyTextView(this._context);
         this.nativeView.setSingleLine(true);
         this.nativeView.setEllipsize(android.text.TextUtils.TruncateAt.END);
-        console.log("*************************")
-        console.log(this.nativeView)
-        console.log("*************************")
         return this.nativeView
     };
+
+    JustifiedLabel.prototype._onTextPropertyChanged = function (oldValue, newValue){
+        this._nativeView.setText(newValue)
+    }
+
     return JustifiedLabel;
 }(common.JustifiedLabel));
 exports.JustifiedLabel = JustifiedLabel;
