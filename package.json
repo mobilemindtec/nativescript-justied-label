@@ -1,5 +1,5 @@
 { "name" : "nativescript-justified-label",
-  "main" : "justified-label.js",
+  "main" : "index.js",
   "version": "0.0.1", 
   "nativescript": {
     "platforms": {
