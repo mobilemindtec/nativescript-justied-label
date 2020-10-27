@@ -1,10 +1,37 @@
-{ "name" : "nativescript-justified-label",
-  "main" : "index.js",
-  "version": "0.0.1", 
+{
+  "_args": [
+    [
+      "git+https://github.com/mobilemindtec/nativescript-justified-label.git",
+      "/Volumes/Data/sources/repositories/amo/app/amo"
+    ]
+  ],
+  "_from": "git+https://github.com/mobilemindtec/nativescript-justified-label.git",
+  "_id": "nativescript-justified-label@git+https://github.com/mobilemindtec/nativescript-justified-label.git#9c4ab0fa5d6ae6971e4ab1189fa3d394e1ff8e59",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/nativescript-justified-label",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "git+https://github.com/mobilemindtec/nativescript-justified-label.git",
+    "rawSpec": "git+https://github.com/mobilemindtec/nativescript-justified-label.git",
+    "saveSpec": "git+https://github.com/mobilemindtec/nativescript-justified-label.git",
+    "fetchSpec": "https://github.com/mobilemindtec/nativescript-justified-label.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/mobilemindtec/nativescript-justified-label.git#9c4ab0fa5d6ae6971e4ab1189fa3d394e1ff8e59",
+  "_spec": "git+https://github.com/mobilemindtec/nativescript-justified-label.git",
+  "_where": "/Volumes/Data/sources/repositories/amo/app/amo",
+  "main": "index.js",
+  "name": "nativescript-justified-label",
   "nativescript": {
     "platforms": {
       "ios": "3.0.0",
       "android": "3.0.0"
     }
-  } 
+  },
+  "version": "0.0.1"
 }

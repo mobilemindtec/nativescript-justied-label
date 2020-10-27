@@ -2,19 +2,14 @@ var common = require("./justified-label-common");
 var utils = require("utils/utils");
 var view = require("ui/core/view");
 
-require("utils/module-merge").merge(common, exports)
+var common = require("./justified-label-common");
 
 
-var JustifiedLabel = (function (_super) {
-    __extends(JustifiedLabel, _super);
-    function JustifiedLabel(arguments) {
-        _super.apply(this, arguments);
-    }
+export class JustifiedLabel extends common.JustifiedLabel{
   
 
-    JustifiedLabel.prototype._onTextPropertyChanged = function (oldValue, newValue) {
+    _onTextPropertyChanged(oldValue, newValue) {
 
-        console.log("_onTextPropertyChanged " + newValue)
         var data = {
             oldValue: oldValue,
             newValue: newValue
@@ -32,11 +27,6 @@ var JustifiedLabel = (function (_super) {
         */
         
         this.nativeView.textAlignment = NSTextAlignmentJustified
-    };
+    }
+}
 
-    
-
-    return JustifiedLabel;
-}(common.JustifiedLabel));
-
-exports.JustifiedLabel = JustifiedLabel
