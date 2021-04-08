@@ -1,8 +1,8 @@
-var common = require("./justified-label-common");
-var utils = require("utils/utils");
-var view = require("ui/core/view");
+import {* as common} from "./justified-label-common"
+import {* as utils} from "@nativescript/core/utils/utils"
+import {* as view} from "@nativescript/core/ui/core/view"
 
-var common = require("./justified-label-common");
+export * from "./justified-label-common"
 
 
 export class JustifiedLabel extends common.JustifiedLabel{
