@@ -1,4 +1,4 @@
-import {* as common} from "./justified-label-common"
+var common = require("./justified-label-common")
 
 export class JustifiedLabel extends common.JustifiedLabel{
     

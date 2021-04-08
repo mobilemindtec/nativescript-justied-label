@@ -1,5 +1,5 @@
-export {* as label} from "@nativescript/core/ui/label"
-export {* as view} from "@nativescript/core/ui/core/view"
+var label =  require("@nativescript/core/ui/label")
+var view =  require("@nativescript/core/ui/core/view")
 
 export class JustifiedLabel extends label.Label{
     
